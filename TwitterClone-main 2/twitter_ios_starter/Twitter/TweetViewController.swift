@@ -17,11 +17,25 @@ class TweetViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func favButton(_ sender: Any) {
+    }
+    @IBAction func retweetButton(_ sender: Any) {
+    }
     @IBOutlet weak var tweetTextView: UITextView!
     @IBAction func cancel(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
+    var favorited: Bool = false
+    func setFavorite(_ isFavorited: Bool){
+        favorited = isFavorited
+        is(favorited){
+            favButton.setImage(UIImage(named:"favor-icon-red"), for: UIControl.State.normal)
+        }
+        else{
+            favButton.setImage(UIImage(named:"favor-icon"), for: UIControl.State.normal )
+        }
+    }
     @IBAction func tweet(_ sender: Any) {
         if (!tweetTextView.text.isEmpty){
             TwitterAPICaller.client?.postTweet(tweetString: tweetTextView.text, success: {self.dismiss(animated:true, completion: nil)}, failture: {(error) in print("Error posting tweet \(error)")

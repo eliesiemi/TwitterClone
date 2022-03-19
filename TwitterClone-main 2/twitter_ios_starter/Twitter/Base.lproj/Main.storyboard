@@ -91,16 +91,44 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ejb-aC-mgj" userLabel="favButton">
+                                            <rect key="frame" x="360" y="106" width="54" height="44"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" image="favor-icon" title=""/>
+                                            <connections>
+                                                <action selector="favButton:" destination="Wmz-07-0wj" eventType="touchUpInside" id="S9R-Iq-FE6"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YSc-MS-ThS" userLabel="retweetButton">
+                                            <rect key="frame" x="307" y="106" width="54" height="44"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" image="retweet-icon" title=""/>
+                                            <connections>
+                                                <action selector="retweetButton:" destination="Wmz-07-0wj" eventType="touchUpInside" id="da2-JP-p2s"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="15 minutes ago " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Iq-iT-MmA" userLabel="timeLabel">
+                                            <rect key="frame" x="307" y="14" width="89" height="15"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="ejb-aC-mgj" firstAttribute="leading" secondItem="YSc-MS-ThS" secondAttribute="trailing" constant="-1" id="06F-4F-TpO"/>
                                         <constraint firstItem="7NB-A5-Kug" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5Bi-tC-G5u" secondAttribute="trailing" constant="8" symbolic="YES" id="2ca-yT-UNk"/>
                                         <constraint firstItem="S7C-9v-sKh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5Bi-tC-G5u" secondAttribute="trailing" constant="8" symbolic="YES" id="3gS-oH-DHh"/>
                                         <constraint firstItem="S7C-9v-sKh" firstAttribute="top" secondItem="5ge-Ks-5Kp" secondAttribute="topMargin" id="4BC-54-KY5"/>
                                         <constraint firstItem="5Bi-tC-G5u" firstAttribute="leading" secondItem="5ge-Ks-5Kp" secondAttribute="leadingMargin" id="Bl1-jB-aAI"/>
                                         <constraint firstItem="5Bi-tC-G5u" firstAttribute="top" secondItem="S7C-9v-sKh" secondAttribute="top" id="X6l-8h-pxd"/>
+                                        <constraint firstAttribute="trailing" secondItem="ejb-aC-mgj" secondAttribute="trailing" id="XQh-tV-8Yv"/>
                                         <constraint firstItem="S7C-9v-sKh" firstAttribute="leading" secondItem="5Bi-tC-G5u" secondAttribute="trailing" constant="8" symbolic="YES" id="aGM-9c-lXr"/>
+                                        <constraint firstItem="ejb-aC-mgj" firstAttribute="top" secondItem="7NB-A5-Kug" secondAttribute="bottom" constant="50.5" id="aey-gT-Qbi"/>
                                         <constraint firstItem="7NB-A5-Kug" firstAttribute="leading" secondItem="5Bi-tC-G5u" secondAttribute="trailing" constant="8" symbolic="YES" id="cy5-o1-yq1"/>
+                                        <constraint firstItem="ejb-aC-mgj" firstAttribute="baseline" secondItem="YSc-MS-ThS" secondAttribute="baseline" id="eHL-Qg-z1j"/>
                                         <constraint firstAttribute="trailing" secondItem="7NB-A5-Kug" secondAttribute="trailing" constant="14" id="faT-F5-WnK"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="YSc-MS-ThS" secondAttribute="trailing" constant="33" id="hl9-Va-rjD"/>
                                         <constraint firstAttribute="trailing" secondItem="S7C-9v-sKh" secondAttribute="trailing" constant="14" id="iqr-iy-Kua"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="5Bi-tC-G5u" secondAttribute="bottom" constant="20" id="rrO-QG-Jkx"/>
                                         <constraint firstItem="7NB-A5-Kug" firstAttribute="top" secondItem="S7C-9v-sKh" secondAttribute="bottom" constant="8" id="zyX-ne-KoD"/>
@@ -131,6 +159,7 @@
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3cS-Li-2hF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Wmz-07-0wj" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-6762.3188405797109" y="918.75"/>
         </scene>
@@ -231,6 +260,8 @@
         <segue reference="LS7-ar-n2D"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="favor-icon" width="30" height="30"/>
+        <image name="retweet-icon" width="30" height="30"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
